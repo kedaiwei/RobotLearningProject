@@ -22,11 +22,12 @@ if __name__ == '__main__':
 
     env = SumoEnvironment(net_file='nets/4x4grid/4x4.net.xml',
                           route_file='nets/4x4grid/4x4.rou.xml',
+                          out_csv_name='outputs/4x4',
                           use_gui=True,
                           num_seconds=80000,
                           max_depart_delay=0)
 
-    for run in range(1, runs+1):
+    for run in range(1, runs+2):
         initial_states = env.reset()
         ql_agents = {ts: QLAgent(starting_state=env.encode(initial_states[ts], ts),
                                  state_space=env.observation_space,

@@ -22,12 +22,12 @@ if __name__ == '__main__':
 
     env = SumoEnvironment(net_file='nets/2lane_intersection/2lane.net.xml',
                           route_file='nets/2lane_intersection/2lane.rou.xml',
-                          out_csv_name='outputs',
+                          out_csv_name='outputs/2lane',
                           use_gui=True,
                           num_seconds=80000,
                           max_depart_delay=0)
 
-    for run in range(1, runs+1):
+    for run in range(1, runs+2):
         initial_states = env.reset()
         ql_agents = {ts: QLAgent(starting_state=env.encode(initial_states[ts], ts),
                                  state_space=env.observation_space,
