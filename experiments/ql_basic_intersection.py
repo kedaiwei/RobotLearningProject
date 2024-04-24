@@ -1,5 +1,6 @@
 import os
 import sys
+from datetime import datetime 
 
 
 if 'SUMO_HOME' in os.environ:
@@ -19,14 +20,16 @@ if __name__ == '__main__':
     gamma = 0.99
     decay = 1
     runs = 1
+    experiment_time = str(datetime.now()).split('.')[0]
 
     env = SumoEnvironment(net_file='nets/basic_intersection/single_intersection.net.xml',
                           route_file='nets/basic_intersection/single_intersection.rou.xml',
+                          out_csv_name='outputs/basic_intersection',
                           use_gui=True,
-                          num_seconds=80000,
+                          num_seconds=20000,
                           max_depart_delay=0)
 
-    for run in range(1, runs+1):
+    for run in range(1, runs+2):
         initial_states = env.reset()
         ql_agents = {ts: QLAgent(starting_state=env.encode(initial_states[ts], ts),
                                  state_space=env.observation_space,

@@ -22,6 +22,7 @@ if __name__ == '__main__':
 
     env = SumoEnvironment(net_file='nets/2lane_intersection/2lane.net.xml',
                           route_file='nets/2lane_intersection/2lane.rou.xml',
+                          out_csv_name='outputs',
                           use_gui=True,
                           num_seconds=80000,
                           max_depart_delay=0)
