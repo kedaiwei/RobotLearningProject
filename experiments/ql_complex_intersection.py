@@ -1,12 +1,12 @@
 import os
 import sys
 
-
 if 'SUMO_HOME' in os.environ:
     tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
     sys.path.append(tools)
 else:
     sys.exit("Please declare the environment variable 'SUMO_HOME'")
+
 
 from sumo_rl import SumoEnvironment
 from sumo_rl.agents import QLAgent
@@ -20,8 +20,8 @@ if __name__ == '__main__':
     decay = 1
     runs = 1
 
-    env = SumoEnvironment(net_file='nets/4x4grid/4x4.net.xml',
-                          route_file='nets/4x4grid/4x4.rou.xml',
+    env = SumoEnvironment(net_file='nets/complex_intersection/complex.net.xml',
+                          route_file='nets/complex_intersection/complex.rou.xml',
                           use_gui=True,
                           num_seconds=80000,
                           max_depart_delay=0)
@@ -45,5 +45,3 @@ if __name__ == '__main__':
                 ql_agents[agent_id].learn(next_state=env.encode(s[agent_id], agent_id), reward=r[agent_id])
 
         env.close()
-
-

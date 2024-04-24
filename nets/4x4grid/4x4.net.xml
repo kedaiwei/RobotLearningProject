@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on seg 17 dez 2018 19:17:58 -02 by Netedit Version 0.32.0
+<!-- 
 <?xml version="1.0" encoding="UTF-8"?>
 
-<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
-
     <input>
-        <sumo-net-file value="nets/4x4-Lucas/4x4.net.xml"/>
+        <sumo-net-file value="nets/4x4grid/4x4.net.xml"/>
+        <route_file='nets/4x4grid/4x4.rou.xml'/>
     </input>
 
     <output>
-        <output-file value="nets/4x4-Lucas/4x4.net.xml"/>
+        <output-file value="nets/4x4grid/4x4.net.xml"/>
     </output>
 
     <processing>

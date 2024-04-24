@@ -20,8 +20,8 @@ if __name__ == '__main__':
     decay = 1
     runs = 1
 
-    env = SumoEnvironment(net_file='nets/4x4grid/4x4.net.xml',
-                          route_file='nets/4x4grid/4x4.rou.xml',
+    env = SumoEnvironment(net_file='nets/3x3grid/3x3.net.xml',
+                          route_file='nets/3x3grid/3x3.rou.xml',
                           use_gui=True,
                           num_seconds=80000,
                           max_depart_delay=0)
