@@ -14,8 +14,8 @@ result_path = 'outputs/CV_results'
 def CV(exp_name = '2lane', rwd_fn = 'avg-speed'):
     # Define ranges for alpha, gamma, and decay
     alphas = np.linspace(0.1, 0.9, 5)
-    gammas = np.linspace(0.99, 1, 5)
-    decays = np.linspace(0.99, 0.9999, 5)
+    gammas = np.linspace(0.96, 0.98, 6)
+    decays = np.linspace(0.997, 0.9999, 5)
 
     results = []
 
@@ -43,7 +43,7 @@ def CV(exp_name = '2lane', rwd_fn = 'avg-speed'):
     Path(Path(result_path).parent).mkdir(parents=True, exist_ok=True)
     df.to_csv(result_path+".csv", index=False)
 
-CV(exp_name = '2lane', rwd_fn = 'avg-speed')
+# CV(exp_name = '2lane', rwd_fn = 'avg-speed')
 
 df = pd.read_csv(result_path+".csv")
 
@@ -75,4 +75,5 @@ m.set_array([])
 cbar = fig.colorbar(m, ax=ax, shrink=0.5, aspect=5)
 cbar.set_label('Reward')
 
+plt.savefig('outputs/CV_results.png', dpi=300)
 plt.show()

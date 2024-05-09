@@ -17,7 +17,7 @@ exp_name_map = {
 }
 
 def runExperiment(exp_name = 'single', rwd_fns = ['avg-speed'], n_sec = 500, gui = True, n_runs = 1, plot = False,
-                  alpha = 0.1, gamma = 0.99, decay = 0.995):
+                  alpha = 0.3, gamma = 0.9725, decay = 0.999175):
     
     tot_r = {}
 
