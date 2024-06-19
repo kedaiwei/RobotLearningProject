@@ -68,9 +68,7 @@ Before applying the reward functions, we worked on the cross validation analysis
 
 The surface plot in Figure below visualizes the interaction between the learning rate $\alpha$ and the discount factor $\gamma$ in relation to the performance of a reinforcement learning algorithm, as measured by some metric of "reward."
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{param} 
+![Figure 1](/outputs/img1.png)
 
 The highest reward regions (yellow) occur around mid-range alpha values (0.3 to 0.7) and high gamma values (close to 0.9990). This suggests that moderate learning rates coupled with a high valuation of future rewards tend to yield the best performance for this specific task or model.  The surface is highly volatile, with multiple peaks and valleys. This also implies that the performance is sensitive to the settings of alpha and gamma, and small changes can significantly affect outcomes. Peaks in the surface likely indicate combinations where the learning dynamics and reward structure are well-matched. By focusing on regions where the reward is maximized, we fine tuned our agent to achieve better balance between exploration (learning new strategies) and exploitation (leveraging known strategies) while maintaining a strong focus on future outcomes. 
 
@@ -85,21 +83,11 @@ The metrics that we chose to analyze are listed below:
 
 In Figure 2, we provide a comparison between two reward functions, Lane-Equal and Improved-Flow for a 3x3 intersection setup. 
 
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{3x3graph} % Replace 
-    \caption{Measuring Stats of Different Reward Functions of 3x3 Intersection}
-    \label{fig:example}
-\end{figure}
+![Figure 2](/outputs/img2.png)
 
 Both Improved-Flow and Lane-Equal show increases in total stops and waiting times as the simulation progresses. However, Improved-Flow generally results in fewer total stops and a slower rate of increase in waiting times compared to Lane-Equal. Improved-Flow consistently exhibits lower mean waiting times throughout the simulation, although it does show an upward trend. In contrast, Lane-Equal demonstrates a steeper and continuous increase in mean waiting time. Improved-Flow maintains higher mean speeds for a longer duration than Lane-Equal, though both experience a decline over time. This suggests that while Improved-Flow is more effective at keeping traffic moving, there are still inefficiencies that could be addressed to optimize performance further. Improved mean speeds might come at the cost of more frequent stopping under certain conditions, indicating a trade-off between maintaining flow and minimizing stops.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{2lane} % Replace 
-    \caption{Measuring Stats of Different Reward Functions of 2 lane Intersection}
-    \label{fig:example}
-\end{figure}
+![Figure 3](/outputs/im3.png)
 
 In Figure 3, we provide a comparison between all four reward functions for a 2 lane intersection setup. 
 
